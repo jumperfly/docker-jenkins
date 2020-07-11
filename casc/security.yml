@@ -1,0 +1,3 @@
+jenkins:
+  securityRealm: none
+  authorizationStrategy: unsecured

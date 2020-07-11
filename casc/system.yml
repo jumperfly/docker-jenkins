@@ -1,0 +1,7 @@
+jenkins:
+  numExecutors: ${JENKINS_NUM_EXECUTORS}
+
+unclassified:
+  location:
+    url: ${JENKINS_URL}
+    adminAddress: ${JENKINS_ADMIN_ADDRESS}
