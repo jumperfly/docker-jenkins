@@ -1,0 +1,32 @@
+version: "2.4"
+
+services:
+  docker:
+    image: docker:19.03.12-dind
+    privileged: true
+    mem_limit: 4g
+    environment:
+      DOCKER_TLS_CERTDIR: /certs
+    volumes:
+      - test_jenkins_docker_certs:/certs/client
+      - test_jenkins_home:/var/jenkins_home
+    ports:
+      - 2376:2376
+  jenkins:
+    image: test
+    mem_limit: 1g
+    environment:
+      DOCKER_HOST: tcp://docker:2376
+      DOCKER_CERT_PATH: /certs/client
+      DOCKER_TLS_VERIFY: 1
+      JENKINS_URL: http://localhost:8080
+      JENKINS_NUM_EXECUTORS: 1
+    volumes:
+      - test_jenkins_home:/var/jenkins_home
+      - test_jenkins_docker_certs:/certs/client:ro
+    ports:
+      - 8080:8080
+      - 50000:50000
+volumes:
+  test_jenkins_docker_certs:
+  test_jenkins_home:

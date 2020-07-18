@@ -12,6 +12,7 @@ COPY plugins.txt /usr/share/jenkins/
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
 
 ENV \
+  SECRETS=/etc/jenkins/casc/secrets.properties \
   CASC_JENKINS_CONFIG=/etc/jenkins/casc \
   JAVA_OPTS="-Djenkins.install.runSetupWizard=false" \
   JENKINS_NUM_EXECUTORS=0 \
@@ -19,3 +20,8 @@ ENV \
   JENKINS_ADMIN_ADDRESS="Jenkins <jenkins@localhost>"
 
 COPY casc/ /etc/jenkins/casc/
+
+USER root
+RUN chown jenkins:jenkins /etc/jenkins/casc/secrets.properties &&\
+  chmod 600 /etc/jenkins/casc/secrets.properties
+USER jenkins
