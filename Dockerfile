@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.235.1-lts
+FROM jenkins/jenkins:2.235.2-lts
 
 USER root
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key add - &&\
