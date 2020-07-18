@@ -8,6 +8,6 @@ workflow-aggregator:2.6
 pipeline-stage-view:2.13
 git:4.3.0
 ssh-slaves:1.31.2
-matrix-auth:2.6.1
+matrix-auth:2.6.2
 docker-workflow:1.23
 configuration-as-code:1.41
