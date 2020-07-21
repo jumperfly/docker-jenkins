@@ -10,5 +10,6 @@ git:4.3.0
 ssh-slaves:1.31.2
 matrix-auth:2.6.2
 docker-workflow:1.23
+job-dsl:1.77
 configuration-as-code:1.41
 next-build-number:1.6
