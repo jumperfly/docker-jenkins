@@ -13,3 +13,4 @@ docker-workflow:1.23
 job-dsl:1.77
 configuration-as-code:1.41
 next-build-number:1.6
+ansicolor:0.7.1
