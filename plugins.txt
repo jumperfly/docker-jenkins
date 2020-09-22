@@ -6,6 +6,7 @@ timestamper:1.11.3
 ws-cleanup:0.38
 workflow-aggregator:2.6
 pipeline-stage-view:2.13
+pipeline-utility-steps:2.6.1
 git:4.3.0
 ssh-slaves:1.31.2
 matrix-auth:2.6.2
